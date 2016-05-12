@@ -8,4 +8,4 @@ log.setLevel(logging.DEBUG)
 
 def handler(event, context):
     log.debug("Received event {}".format(json.dumps(event)))
-    return {}
+    return json.dumps(context)

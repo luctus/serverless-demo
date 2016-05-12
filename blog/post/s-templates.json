@@ -1,0 +1,13 @@
+{
+  "apiRequestPostCreateTemplate": {
+    "application/json": {
+      "operation": "create",
+      "tableName": "blog-posts",
+      "payload": {
+        "Item": {
+          "content": "$input.json('$')"
+        }
+      }
+    }
+  }
+}

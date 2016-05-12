@@ -9,5 +9,11 @@
     "type": "git",
     "url": "git://github.com/"
   },
-  "dependencies": {}
+  "dependencies": {
+    "dynamodb": "^0.3.6",
+    "node-uuid": "^1.4.7"
+  },
+  "devDependencies": {
+    "node-uuid": "^1.4.7"
+  }
 }
