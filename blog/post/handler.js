@@ -1,7 +1,7 @@
 'use strict';
 
 var doc = require('dynamodb-doc');
-var dynamp = new doc.DynamoDB();
+var dynamo = new doc.DynamoDB();
 
 module.exports.handler = function(event, context, cb) {
   console.log('Received event:', JSON.stringify(event, null, 2));
@@ -14,6 +14,9 @@ module.exports.handler = function(event, context, cb) {
       var uuid = require('node-uuid');
       event.payload.Item.postId = uuid.v1();
       dynamo.putItem(event.payload, context.done);
+      break;
+    case 'read':
+      dynamo.getItem(event.payload, context.done);
       break;
   }
 };

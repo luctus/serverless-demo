@@ -4,7 +4,7 @@
   "description": "Serverless Lambda function for project: serverless-by2hc",
   "customName": false,
   "customRole": false,
-  "handler": "handler.handler",
+  "handler": "blog/post/handler.handler",
   "timeout": 6,
   "memorySize": 1024,
   "authorizer": {},
@@ -19,10 +19,10 @@
       "authorizationType": "none",
       "authorizerFunction": false,
       "apiKeyRequired": false,
-      "requestParameters": {},
-      "requestTemplates": {
-        "application/json": ""
+      "requestParameters": { 
+        "integration.request.querystring.postId": "method.request.querystring.postId"
       },
+      "requestTemplates": "$${apiRequestPostReadTemplate}",
       "responses": {
         "400": {
           "statusCode": "400"
@@ -33,9 +33,7 @@
           "responseModels": {
             "application/json;charset=UTF-8": "Empty"
           },
-          "responseTemplates": {
-            "application/json;charset=UTF-8": ""
-          }
+          "responseTemplates": "$${apiResponsePostReadTemplate}"
         }
       }
     },

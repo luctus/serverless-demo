@@ -9,5 +9,19 @@
         }
       }
     }
+  },
+  "apiRequestPostReadTemplate": {
+    "application/json": {
+      "operation": "read",
+      "tableName": "blog-posts",
+      "payload": {
+        "Key": {
+          "postId": "$input.params('postId')"
+        }
+      }
+    }
+  },
+  "apiResponsePostReadTemplate": {
+    "application/json": ""
   }
 }
